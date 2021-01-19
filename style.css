@@ -8,4 +8,5 @@ p {
 
     background: green;
     font-weight: 100;
+    max-width: 100px;
 }

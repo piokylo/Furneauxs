@@ -32,8 +32,8 @@ gulp.task('watch', function () {
 
     })
 
-    gulp.watch('index.html', gulp.series('html'));
-    gulp.watch('style.css', gulp.series('css'));
+    gulp.watch('index.html', gulp.series('html')).on("change", browserSync.reload);
+    gulp.watch('style.css', gulp.series('css')).on("change", browserSync.reload);
 
 });
 

@@ -1,21 +1,25 @@
-const { dest } = require('gulp');
-var gulp = require('gulp');
-var cleanCss = require('gulp-clean-css');
+var gulp = require('gulp')
+var cleanCss = require('gulp-clean-css')
 
-gulp.task('css', async function() {
+gulp.task('css',  function() {
     return gulp.src('style.css')
-    .pipe(cleanCss())
-    .pipe(gulp.dest('./dest'))
+    .pipe(
+        cleanCss({
+
+            compatibility: 'ie8'
+    })
+    )
+    .pipe(gulp.dest('dist'))
 
 
 
 })
 
 
-gulp.task('watch', async function(){
-    gulp.watch()
+// gulp.task('watch', function(){
+//     gulp.watch()
 
 
-});
+// });
 
-gulp.task('default',['css','watch']);
+gulp.task('default',gulp.series('css'));

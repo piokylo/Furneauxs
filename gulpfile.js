@@ -1,25 +1,41 @@
-var gulp = require('gulp')
-var cleanCss = require('gulp-clean-css')
+var gulp = require('gulp');
+var cleanCss = require('gulp-clean-css');
+var browserSync = require('browser-sync');
 
-gulp.task('css',  function() {
+gulp.task('css', function () {
     return gulp.src('style.css')
-    .pipe(
-        cleanCss({
+        .pipe(
+            cleanCss({
 
-            compatibility: 'ie8'
+                compatibility: 'ie8'
+            })
+        )
+        .pipe(gulp.dest('dist'))
+
+});
+
+gulp.task('html', function () {
+    return gulp.src('index.html')
+        .pipe(gulp.dest('dist'))
+
+
+});
+
+
+gulp.task('watch', function () {
+
+    browserSync.init({
+        server: {
+
+            baseDir: 'dist'
+        }
+
     })
-    )
-    .pipe(gulp.dest('dist'))
+
+    gulp.watch('index.html', gulp.series('html'));
+    gulp.watch('style.css', gulp.series('css'));
+
+});
 
 
-
-})
-
-
-// gulp.task('watch', function(){
-//     gulp.watch()
-
-
-// });
-
-gulp.task('default',gulp.series('css'));
+gulp.task('default', gulp.series('html', 'css', 'watch'));

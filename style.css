@@ -175,11 +175,13 @@ body {
 }
 
 header {
-    height: 50px;
+    
     padding: 10px 15px;
     width: 100%;
-
+    position: relative;
+    background-color: #fff;
     overflow: hidden;
+    box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.4);
 }
 
 header h1 {
@@ -207,20 +209,26 @@ header nav>a {
 .hero {
     background-image: url(img/hero.jpg);
     background-size: cover;
-    padding-top: 230px;
-    padding-bottom: 200px;
-    background-position:right center;
+   height: 100vh;
+    background-position: right center;
 }
-.hero div{
+
+.hero div {
     max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
+   
     padding-right: 20px;
     padding-left: 20px;
     text-align: center;
 }
+.center {
 
-.hero h1{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+}
+
+.hero h1 {
     font-family: David Libre;
     font-size: 64px;
     line-height: 1;
@@ -231,9 +239,205 @@ header nav>a {
 
 }
 
-.hero p{
-    margin-right: 0;
+.hero p {
+
     max-width: 400px;
     margin-left: auto;
-    margin-right:auto ;
+    margin-right: auto;
 }
+
+.flowers {
+    overflow: hidden;
+}
+
+section.flowers>img {
+
+    display: block;
+    width: 33.3%;
+    float: left;
+
+}
+
+
+.quotes {
+    overflow: hidden;
+
+}
+
+.quotes div {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 50px 20px 40px 20px ;
+
+}
+
+.quotes div>img {
+    border-radius: 50%;
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.quotes blockquote{
+
+    font-family: David Libre;
+    font-style: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 400px;
+    margin: 10px auto;
+
+}
+.quotes p {
+
+    font-weight: 300;
+}
+.quotes div:first-child {
+
+    background-color: #f7f1ee;
+} 
+
+.chair {
+
+    background-image: url('img/full-bleed.jpg');
+    background-position: center;
+    padding: 0;
+    height: 100vh;
+}
+
+
+.logos{
+
+    background-color: #eeae9f;
+    padding: 25px 20px 35px 20px;
+    text-align: center;
+}
+
+.logos p{
+
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.logos img{
+
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+footer{
+
+    background-color: black;
+    overflow: hidden;
+    height: 80px;
+    padding: 25px 30px;
+
+
+}
+footer img{
+    float: left;
+
+}
+footer p {
+    color:#fff;
+    float: right;
+}
+
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .hero p {
+
+        max-width: 240px;
+    }
+    .quotes div {
+        float: none;
+     width: auto;
+     padding: 30px 30px 40px 30px;
+     }
+
+     .quotes blockquote {
+        font-size: 20px;
+      }
+  
+      .quotes p {
+		/* this will hide our elements from the page visually
+    but they will remain in the html */
+    display: none;
+  }
+  body {
+    font-size: 14px;
+  }
+  
+  header nav {
+		/* this will keep our nav vertically aligned with the h1 */
+    line-height: 24px;
+  }
+  .logos img{
+
+   margin-bottom: 15px;
+}
+.herom {
+
+    height: 75vh;
+    background-position: 40% 70%;
+ }
+ .chair {
+    height: 75vh;
+    background-position: center;
+ }
+
+}
+@media (max-width: 430px) {
+  
+    header h1,
+    header nav {
+      float: none;
+      text-align: center;
+
+    }
+    header h1 {
+        margin-bottom: 15px;
+    }
+  
+    header nav a {
+      margin-left: 12px;
+      margin-right: 12px;
+     
+    }
+    
+    section.flowers img {
+      float: none;
+      width: auto;
+    }
+    
+    footer {
+      padding: 30px 20px;
+    }
+    .logos img{
+
+       display: block;
+       
+       margin: 0 auto 15px auto;
+     }
+
+     .logos img:last-child{
+
+        margin-bottom: 0;
+     }
+     .herom {
+
+        height: 75vh;
+        background-position: 40% 70%;
+     }
+    .chair {
+        height: 75vh;
+        background-position: center;
+     }
+    
+  }

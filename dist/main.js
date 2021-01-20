@@ -1,1 +1,2 @@
 var mainVar;
+var thisIsWorking;

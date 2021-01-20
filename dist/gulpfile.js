@@ -58,7 +58,7 @@ gulp.task('watch', function () {
 
     })
 
-    gulp.watch(' *.html', gulp.series('html')).on("change", browserSync.reload);
+    gulp.watch('*.html', gulp.series('html')).on("change", browserSync.reload);
     gulp.watch('style.css', gulp.series('css')).on("change", browserSync.reload);
     gulp.watch('fonts/*', gulp.series('fonts')).on("change", browserSync.reload);
     gulp.watch('img/*', gulp.series('img')).on("change", browserSync.reload);

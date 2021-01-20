@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var cleanCss = require('gulp-clean-css');
 var browserSync = require('browser-sync');
 var imagemin = require('gulp-imagemin');
+var ghPages = require('gh-pages');
 
 gulp.task('css', function () {
     return gulp.src('style.css')
@@ -32,7 +33,7 @@ gulp.task('fonts', function () {
 
 gulp.task('img', function () {
     return gulp.src('img/* ')
-        .pipe(imagemin())
+        // .pipe(imagemin())
         .pipe(gulp.dest('dist/img'))
 
 
@@ -64,6 +65,11 @@ gulp.task('watch', function () {
     gulp.watch('*.js', gulp.series('js')).on("change", browserSync.reload);
 
 });
+
+gulp.task('deploy', async function(){
+
+    ghPages.publish("dist")
+})
 
 
 gulp.task('default', gulp.series('html', 'css','fonts','js', 'img',  'watch'));

@@ -32,7 +32,7 @@ gulp.task('fonts', function () {
 
 gulp.task('img', function () {
     return gulp.src('img/* ')
-        .pipe(imagemin())
+        // .pipe(imagemin())
         .pipe(gulp.dest('dist/img'))
 
 
